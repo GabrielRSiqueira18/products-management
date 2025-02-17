@@ -35,5 +35,5 @@ global_web_commerces: list[GlobalWebCommerces] = [
 ]
 
 QUANTITY_ELEMENTS_PER_SEARCH = 10
-
+TIME_TO_SEARCH_IN_SECONDS = 1000 * 60 * 60 * 6 # 6 Horas
 

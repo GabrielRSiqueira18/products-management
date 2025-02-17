@@ -4,7 +4,7 @@
 
 ### Regras Funcionais
 
-- [] Deve ser possível extrair produtos de web-commerces 
+- [x] Deve ser possível extrair produtos de web-commerces 
 - [] Deve ser possível enviar produtos extraidos para outra aplicação
 
 ### Regras Não Funcionais
