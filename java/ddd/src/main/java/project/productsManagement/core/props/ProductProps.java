@@ -1,4 +1,4 @@
-package project.productsManagement.domain.management.enterprise.entities.product;
+package project.productsManagement.core.props;
 
 import java.net.URI;
 import java.time.OffsetDateTime;
