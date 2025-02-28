@@ -41,10 +41,6 @@ public class UserProductUseCase {
         return userProductRepository.getByUserId(id);
     }
 
-    public List<UserProduct> getByProductId(Integer id) {
-        return userProductRepository.getByProductId(id);
-    }
-
     public List<UserProduct> getAll() {
         return userProductRepository.getAll();
     }
