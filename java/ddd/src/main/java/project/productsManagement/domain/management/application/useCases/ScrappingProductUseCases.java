@@ -13,26 +13,14 @@ public class ScrappingProductUseCases {
         this.scrappingProductsRepository = scrappingProductsRepository;
     }
 
-    private void validateData(ScrappingProduct data) {
-        if (data == null || Utils.classHasNullAttribute(data)) {
-            throw new NullPointerException("ScrappingProduct must not be null");
-        }
-    }
-
     public ScrappingProduct create(ScrappingProduct data) {
-        validateData(data);
+        Utils.hasNullValue(data);
 
         return scrappingProductsRepository.create(data);
     }
 
-    public ScrappingProduct update(ScrappingProduct data) {
-        validateData(data);
-
-        return scrappingProductsRepository.update(data);
-    }
-
     public void delete(ScrappingProduct data) {
-        validateData(data);
+        Utils.hasNullValue(data);
         scrappingProductsRepository.delete(data);
     }
 

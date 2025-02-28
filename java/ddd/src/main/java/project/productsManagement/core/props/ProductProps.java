@@ -9,7 +9,6 @@ public class ProductProps {
     public Double price;
     public URI imageUrl;
     public URI siteUrl;
-    public OffsetDateTime crappingTime;
     public OffsetDateTime createdAt;
 
     public ProductProps(
@@ -18,7 +17,6 @@ public class ProductProps {
         Double price,
         URI imageUrl,
         URI siteUrl,
-        OffsetDateTime crappingTime,
         OffsetDateTime createdAt
     ) {
         this.name = name;
@@ -26,7 +24,6 @@ public class ProductProps {
         this.price = price;
         this.imageUrl = imageUrl;
         this.siteUrl = siteUrl;
-        this.crappingTime = crappingTime;
         this.createdAt = createdAt;
     }
 }

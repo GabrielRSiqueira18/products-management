@@ -14,20 +14,13 @@ public class UserUseCase {
         this.userRepository = userRepository;
     }
 
-    private void validateData(User data) {
-        if (data == null || Utils.classHasNullAttribute(data)) {
-            throw new NullPointerException("User must not be null");
-        }
-    }
-
     public User create(User user) {
-        validateData(user);
+        Utils.hasNullValue(user);
 
         return userRepository.create(user);
     }
 
     public User update(User user) {
-        validateData(user);
         return userRepository.update(user);
     }
 

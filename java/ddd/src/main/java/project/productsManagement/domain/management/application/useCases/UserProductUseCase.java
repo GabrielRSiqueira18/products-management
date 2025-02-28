@@ -2,7 +2,6 @@ package project.productsManagement.domain.management.application.useCases;
 
 import project.productsManagement.core.Utils;
 import project.productsManagement.domain.management.application.repositories.UserProductRepository;
-import project.productsManagement.domain.management.enterprise.entities.scrappingProduct.ScrappingProduct;
 import project.productsManagement.domain.management.enterprise.entities.userProduct.UserProduct;
 
 import java.util.List;
@@ -15,21 +14,13 @@ public class UserProductUseCase {
         this.userProductRepository = userProductRepository;
     }
 
-    private void validateData(UserProduct data) {
-        if (data == null || Utils.classHasNullAttribute(data)) {
-            throw new NullPointerException("ScrappingProduct must not be null");
-        }
-    }
-
     public UserProduct create(UserProduct userProduct) {
-        validateData(userProduct);
+        Utils.hasNullValue(userProduct);
 
         return userProductRepository.create(userProduct);
     }
 
     public UserProduct update(UserProduct userProduct) {
-        validateData(userProduct);
-
         return userProductRepository.update(userProduct);
     }
 

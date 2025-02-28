@@ -6,6 +6,8 @@ import java.net.URI;
 import java.time.OffsetDateTime;
 
 public class ScrappingProductProps extends ProductProps {
+    public OffsetDateTime crappingTime;
+
     public ScrappingProductProps(
         String name,
         String priceSymbol,
@@ -21,8 +23,9 @@ public class ScrappingProductProps extends ProductProps {
             price,
             imageUrl,
             siteUrl,
-            crappingTime,
             createdAt
         );
+
+        this.crappingTime = crappingTime;
     }
 }

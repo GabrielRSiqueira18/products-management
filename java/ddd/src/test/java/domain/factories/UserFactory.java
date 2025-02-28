@@ -21,10 +21,10 @@ public class UserFactory {
         );
     }
 
-    public static List<User> createUsers(int target, UUID id) {
-        List<User> users = new ArrayList<>(10);
+    public static List<User> createUsers(int quantity, int target, UUID id) {
+        List<User> users = new ArrayList<>();
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < quantity; i++) {
             users.add(createUser(
                 i == target ? id : UUID.randomUUID(),
                 "username" + i,

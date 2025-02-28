@@ -22,8 +22,27 @@ public class User extends Entity<UUID, UserProps> {
         return props.password;
     }
 
+    public OffsetDateTime getCreatedAt() {
+        return props.createdAt;
+    }
+
+    public void setPassword(String password) {
+        props.password = password;
+    }
+
+    public void setUsername(String username) {
+        props.username = username;
+    }
+
+    public void setEmail(String email) {
+        props.email = email;
+    }
+
+    public void setCreatedAt(OffsetDateTime createdAt) {
+        props.createdAt = createdAt;
+    }
+
     public static User create(UUID id, UserProps props) {
         return new User(id, props);
     }
-
 }

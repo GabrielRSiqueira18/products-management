@@ -16,7 +16,6 @@ public class UserProductProps extends ProductProps {
         Double price,
         URI imageUrl,
         URI siteUrl,
-        OffsetDateTime crappingTime,
         OffsetDateTime createdAt
     ) {
         super(
@@ -25,10 +24,9 @@ public class UserProductProps extends ProductProps {
             price,
             imageUrl,
             siteUrl,
-            crappingTime,
             createdAt
         );
-       this.userId = userId;
 
+       this.userId = userId;
     }
 }

@@ -3,7 +3,6 @@ package domain.repositories;
 import project.productsManagement.domain.management.application.repositories.UserRepository;
 import project.productsManagement.domain.management.enterprise.entities.user.User;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -16,12 +15,24 @@ public class ImMemoryUserRepository implements UserRepository {
 
     @Override
     public User update(User user) {
-        return null;
+        var target = getById(user.getID());
+
+        user.setUsername(user.getUsername() != null ? user.getUsername() : target.getUsername());
+        user.setEmail(user.getEmail() != null ? user.getEmail() : target.getEmail());
+        user.setPassword(user.getPassword() != null ? user.getPassword() : target.getPassword());
+        user.setCreatedAt(target.getCreatedAt());
+
+        items.set(items.indexOf(user), user);
+        return user;
     }
 
     @Override
     public User getById(UUID id) {
-       return items.stream().filter(e -> e.getID().equals(id)).findFirst().orElse(null);
+       return items
+               .stream()
+               .filter(e -> e.getID().equals(id))
+               .findFirst()
+               .orElse(null);
     }
 
     @Override

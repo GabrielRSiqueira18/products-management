@@ -1,5 +1,7 @@
 package project.productsManagement.core.entities;
 
+import project.productsManagement.core.Utils;
+
 import java.util.Objects;
 import java.util.UUID;
 
@@ -24,6 +26,10 @@ public abstract class Entity<T, R> {
 
     public T getID() {
         return ID;
+    }
+
+    public boolean propsHasNullValue() {
+        return Utils.classHasNullAttribute(props);
     }
 
     @Override
