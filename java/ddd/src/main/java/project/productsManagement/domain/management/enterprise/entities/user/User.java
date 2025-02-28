@@ -17,4 +17,8 @@ public class User extends Entity<UUID, UserProps> {
     public String getUsername() {
         return props.username;
     }
+
+    public String getEmail() {
+        return props.email;
+    }
 }
