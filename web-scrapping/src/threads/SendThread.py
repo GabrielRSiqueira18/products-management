@@ -10,7 +10,7 @@ class SendQueue(threading.Thread):
     def __init__(self, queue):
         super(SendQueue, self).__init__()
         self.__queue = queue
-        self.__file_path = "results/products.json"
+        self.__file_path = "../results/products.json"
 
     def run(self):
         logger.info("Starting thread to send value")

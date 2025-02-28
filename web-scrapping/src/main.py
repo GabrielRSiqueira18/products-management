@@ -11,7 +11,7 @@ from threads.ScrappingThread import ScrappingThread
 from threads.SendThread import SendQueue
 
 def configure_logging():
-    logging_folder = "logs"
+    logging_folder = "../logs"
     logging_file = "logging.log"
 
     if not os.path.exists(logging_folder):
@@ -28,7 +28,7 @@ def configure_logging():
     )
 
 def create_json_results():
-    output_dir = "results"
+    output_dir = "../results"
     output_file = 'products.json'
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
