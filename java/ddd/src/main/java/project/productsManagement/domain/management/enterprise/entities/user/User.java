@@ -10,10 +10,6 @@ public class User extends Entity<UUID, UserProps> {
         super(id, props);
     }
 
-    public static User create(UUID id, UserProps props) {
-        return new User(id, props);
-    }
-
     public String getUsername() {
         return props.username;
     }
@@ -21,4 +17,13 @@ public class User extends Entity<UUID, UserProps> {
     public String getEmail() {
         return props.email;
     }
+
+    public String getPassword() {
+        return props.password;
+    }
+
+    public static User create(UUID id, UserProps props) {
+        return new User(id, props);
+    }
+
 }
