@@ -3,12 +3,29 @@ from selenium.webdriver.common.by import By
 from .GlobalWebCommerces import GlobalWebCommerces
 
 global_web_commerces: list[GlobalWebCommerces] = [
-    # GlobalWebCommerces(
-    #     "mercado_livre",
-    #     "https://www.mercadolivre.com.br",
-    #     "cb1-edit",
-    #     "nav-search-btn"
-    # ),
+    GlobalWebCommerces(
+        "mercado_livre",
+        "https://www.mercadolivre.com.br",
+        GlobalWebCommerces.ScrappingDetails(
+            By.CLASS_NAME,
+            "nav-search-input",
+            By.CLASS_NAME,
+            "nav-search-btn",
+            By.CLASS_NAME,
+            "ui-search-layout__item",
+            By.CLASS_NAME,
+            "poly-component__title",
+            By.CLASS_NAME,
+            "andes-money-amount__fraction",
+            By.CLASS_NAME,
+            "andes-money-amount__currency-symbol",
+            By.CLASS_NAME,
+            "poly-component__picture",
+            By.CLASS_NAME,
+            "poly-component__title"
+        )
+
+    ),
 
     GlobalWebCommerces(
         "amazon",

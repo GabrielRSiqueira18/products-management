@@ -2,13 +2,18 @@ from datetime import datetime
 import pytz
 
 class Product:
-    def __init__(self, product_name, symbol, price, image_url, site_link):
+    def __init__(self, site, product_name, symbol, price, image_url, site_link):
+        self.__site = site
         self.__name = product_name
         self.__symbol = symbol
         self.__price = price
         self.__image_url = image_url
         self.__site_link = site_link
         self.__scrapping_time = datetime.now()
+
+    @property
+    def site(self):
+        return self.__site
 
     @property
     def name(self):
@@ -36,6 +41,7 @@ class Product:
 
     def to_dict(self):
         return {
+            'site': self.__site,
             'name': self.__name,
             'symbol': self.__symbol,
             'price': self.__price,

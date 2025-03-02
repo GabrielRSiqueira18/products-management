@@ -29,7 +29,7 @@ class ScrappingThread(threading.Thread):
             random_product = self.__products_name_to_search[
                 random.randint(0, len(self.__products_name_to_search) - 1)
             ]
-            logger.info("Try to scrapping product: " + random_product)
+            logger.info(f"Try to scrapping product [{self.__name}]: " + random_product)
 
             result = selenium.search_products(random_product)
             selenium.quit()
