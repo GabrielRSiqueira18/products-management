@@ -23,13 +23,13 @@ class SendQueue(threading.Thread):
                         product_name = result.name
                         logger.info(f"Starting to send value: {product_name}")
 
-                        # requests.post(
-                        #     "",
-                        #     json.dumps(result.to_dict()),
-                        #     headers={"Content-Type": "application/json"},
-                        #     verify=False,
-                        #     timeout=5
-                        # )
+                        requests.post(
+                            "http://localhost:8080/api/v1/web-scrapping",
+                            json.dumps(result.to_dict()),
+                            headers={"Content-Type": "application/json"},
+                            verify=False,
+                            timeout=5
+                        )
                         with open(self.__file_path, 'r+', encoding='utf-8') as file:
                             data = json.load(file)
 
