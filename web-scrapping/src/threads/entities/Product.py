@@ -47,5 +47,5 @@ class Product:
             'price': self.__price,
             'image_url': self.__image_url,
             'site_link': self.__site_link,
-            "scrapping_time": self.scrapping_time.astimezone(pytz.utc).strftime("%Y-%m-%d %H:%M:%S%z")
+            "scrapping_time": self.scrapping_time.astimezone(pytz.utc).strftime("%Y-%m-%dT%H:%M:%S%z")
         }

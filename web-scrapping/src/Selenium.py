@@ -1,3 +1,4 @@
+import re
 import time
 
 from loguru import logger
@@ -39,6 +40,33 @@ class Selenium(webdriver.Chrome):
                 break
             start_height = now_height
 
+    def __shorten_webcommerce_url(self, url):
+        if "amazon.com.br" in url:
+            amazon_pattern = r'amazon\.com\.br/.*?/dp/([A-Z0-9]{10})'
+            amazon_match = re.search(amazon_pattern, url)
+
+            if amazon_match:
+                asin = amazon_match.group(1)
+                return f"https://www.amazon.com.br/dp/{asin}"
+
+        if "produto.mercadolivre.com.br" in url:
+            ml_pattern = r'MLB-(\d+)'
+            ml_match = re.search(ml_pattern, url)
+
+            if ml_match:
+                ml_id = ml_match.group(1)
+                return f"https://produto.mercadolivre.com.br/MLB-{ml_id}"
+
+        if "click1.mercadolivre.com.br" in url:
+            wid_pattern = r'wid=MLB(\d+)'
+            wid_match = re.search(wid_pattern, url)
+
+            if wid_match:
+                ml_id = wid_match.group(1)
+                return f"https://produto.mercadolivre.com.br/MLB-{ml_id}"
+
+        return url
+
     def search_products(self, query_search: str) -> list[WebElement] or None:
         result = []
         try:
@@ -75,7 +103,7 @@ class Selenium(webdriver.Chrome):
                         price=price,
                         symbol=symbol,
                         image_url=image,
-                        site_link=link,
+                        site_link=self.__shorten_webcommerce_url(link),
                     ))
                 except:
                     continue

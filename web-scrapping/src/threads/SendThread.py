@@ -25,7 +25,7 @@ class SendQueue(threading.Thread):
 
                         requests.post(
                             "http://localhost:8080/api/v1/web-scrapping",
-                            json.dumps(result.to_dict()),
+                            json=result.to_dict(),
                             headers={"Content-Type": "application/json"},
                             verify=False,
                             timeout=5
@@ -41,5 +41,5 @@ class SendQueue(threading.Thread):
 
                 except Exception as e:
                     logger.error(f"Error occurred to scrapping a product: {e}")
-                    return
+                    continue
             time.sleep(10)
