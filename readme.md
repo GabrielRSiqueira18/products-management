@@ -9,9 +9,9 @@
 
 ### Regras Não Funcionais
 
-- [] Cada site de web-commerce será uma thread para extrair seus dados
-- [] O scrapping será realizado a cada 1h, após a extração os dados serão enviados à outra aplicação
-- [] Os dados serão armazenados na memória e excluídos após ser enviado para outra aplicação
+- [x] Cada site de web-commerce será uma thread para extrair seus dados
+- [x] O scrapping será realizado a cada 1h, após a extração os dados serão enviados à outra aplicação
+- [x] Os dados serão armazenados na memória e excluídos após ser enviado para outra aplicação
 - [] Caso o produto já exista na outra aplicação, realizará uma regra para ver o melhor e buscar outros produtos de acordo com a quantidade de retorno, sendo possível ver qual produto foi retornado
 
 ## Aplicação Web (Front-end; Backend)
@@ -19,13 +19,13 @@
 
 ### Regras Funcionais
 
-- [] Deve ser possível cadastrar produtos vindo de outro serviço web-scrapping
-- [] Deve ser possível visualizar os produtos
-- [] Deve ser possível pegar produto pelo ID
+- [x] Deve ser possível cadastrar produtos vindo de outro serviço web-scrapping
+- [x] Deve ser possível visualizar os produtos
+- [x] Deve ser possível pegar produto pelo ID
 - [] Deve ser possível cadastrar usuário
 - [] Deve ser possível autenticar usuário
 - [] Deve ser possível indentificar o usuário entre as requisições
-- [] Deve ser possível o usuário CRUD seu próprio produto
+- [x] Deve ser possível o usuário CRUD seu próprio produto
 - [] Deve ser possível criar ambientes para cadastrar produtos
 - [] Deve ser possível comprar um plano
 - [] Deve ser possível visualizar valor de cada produto e valo total dos produtos selecionados no ambiente
@@ -34,7 +34,7 @@
 
 ### Regras Não Funcionais
 
-- [] Os dados devem estar persistidos em um banco de dados racional (PostgresSQL)
+- [x] Os dados devem estar persistidos em um banco de dados racional (PostgresSQL)
 - [] Para indentificar os usuários entre requests deve utiliar JWT
 - [] Os planos serão: Básico, Plus, Premium (pode mudar)
 - [] Para cadastrar produto o usuário deverá ter um plano ou pagar um valor fixo que será aumentado conforme a compra de quantidades de produtos próprios
