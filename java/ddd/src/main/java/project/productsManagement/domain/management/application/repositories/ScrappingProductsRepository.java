@@ -2,13 +2,12 @@ package project.productsManagement.domain.management.application.repositories;
 
 import project.productsManagement.domain.management.enterprise.entities.scrappingProduct.ScrappingProduct;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public interface ScrappingProductsRepository {
-    List<ScrappingProduct> items = new ArrayList<>(10);
-
     ScrappingProduct create(ScrappingProduct scrappingProduct);
+    ScrappingProduct update(ScrappingProduct scrappingProduct);
     ScrappingProduct getById(Integer id);
     ScrappingProduct getByProductName(String productName);
     List<ScrappingProduct> getAll();
